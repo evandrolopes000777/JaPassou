@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&display=swap');
+
+:root{
+    --azul: #4C8ED9;
+    --amarelo: #FFC43B;
+}
+
+.login{
+    background-color: var(--azul) !important;
+}
+
+.logo{
+    margin-top: 30%;
+}
+input{
+    font-family: "Intel One Mono", monospace;
+}
+
+.form-control{
+    /*nao consegui fazer o border radius ficar bom*/
+}
+
+a{
+    color: black;
+}
+
+.botaoLogin{
+    background-color: #ffff !important;
+    min-width: 200px;
+    height: 60px;
+    border-color: var(--amarelo);
+    border-width: 5px;
+    /*nao consegui fazer o border radius ficar bom*/
+
+
+    /* fonte*/
+    font-family: "Intel One Mono", monospace;
+    font-weight: 700;
+    font-size: x-large;
+    color: black;
+}
+
+.botaoLogin:hover{
+    color: black;
+}
