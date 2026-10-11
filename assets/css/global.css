@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&display=swap');
+
+
+/*paleta de cores*/
+:root {
+    --azul: #4C8ED9;
+    --amarelo-claro: #FFE67A;
+    --amarelo: #FFC43B;
+    --verde: #26B72F;
+    --vermelho: #8A2203;
+}
+
+
+
+body {
+    background-color: var(--amarelo-claro) !important;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    width: 100%;
+}
+
+h1 {
+    color: black;
+    font-family: "Intel One Mono", monospace;
+}
+
+p {
+    text-align: justify;
+    color: black;
+    font-family: "Intel One Mono", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+nav {
+    background-color: var(--amarelo-claro) !important;
+}
+
+
+
+.botaoLogin{
+    background-color: #ffff !important;
+    min-width: 200px;
+    height: 60px;
+    border-color: var(--amarelo);
+    border-width: 5px;
+    /*nao consegui fazer o border radius ficar bom*/
+
+
+    /* fonte*/
+    font-family: "Intel One Mono", monospace;
+    font-weight: 700;
+    font-size: x-large;
+    color: black;
+}
+
+.botaoLogin:hover{
+    color: black;
+    background-color: var(--azul) !important;
+}
+
+footer {
+    background-color: white !important;
+    color: black;
+    font-family: "Intel One Mono", monospace;
+    font-weight: 700;
+    font-size: large;
+    width: 100%;
+    margin-top: auto;
+    text-align: center;
+}
