@@ -1,0 +1,166 @@
+
+.logo{
+    margin-inline: 5%;
+    margin-top: 15%;
+}
+
+.card-transporte h1, .card-transporte h2, .card-transporte p {
+  margin: 0;
+}
+
+h1{
+    font-size: 32px;
+    margin-inline: 5%;
+    margin-top: 5%;
+
+}
+
+h2{
+    color: #E3BD61;
+    font-size: 20px;
+    margin-inline: 5%;
+
+}
+
+
+
+.card{
+    background-color: var(--azul-escuro-card);
+    width: 356px;
+    height: 367px;
+    border-radius: 20px;
+    margin-inline: auto;
+    margin-top: 7%;
+
+}
+/* area do status e nome da rota */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 0px;
+  border-bottom: none;
+}
+
+.status {
+  background-color: #C6E5C8;
+  color: #38C441;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.rota-nome{
+    color: white;
+    font-size: 16px;
+}
+
+/* area da estimativa e do ponto */
+.estimativa-container {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 24px;
+  margin-left: 20px;
+  color: white;
+}
+
+.coluna-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.label-pequena {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+  text-transform: uppercase;
+}
+
+.valor-tempo {
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.valor-destino {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/*area de marcar se vai ou nao*/
+.seletor-presenca-custom {
+  display: flex;
+  background-color: #d9d9d952;
+  padding: 5px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+}
+
+.seletor-presenca-custom input[type="radio"] {
+  display: none; /* Oculta a bolinha*/
+}
+
+.seletor-presenca-custom .opcao-btn {
+  flex: 1;
+  text-align: center;
+  padding: 15px 0;
+  border-radius: 10px;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 15px;
+}
+
+/* Aplica cor quando é selecionado */
+#vou-hoje:checked + .opcao-btn,
+#nao-vou:checked + .opcao-btn {
+  background-color: var(--amarelo-btn);
+  color: #000000;
+}
+
+.texto-aviso {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  line-height: 1.4;
+  color: white;
+}
+
+
+.acoes-container {
+  display: flex;
+  gap: 12px;
+}
+
+.rodape {
+  display: flex;
+  gap: 12px;
+}
+
+.botao {
+  flex: 1;
+  padding: 12px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.ver-no-mapa {
+  background-color: var(--amarelo-btn);
+  color: #000000;
+  border: none;
+}
+
+.alterar {
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
