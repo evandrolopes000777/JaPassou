@@ -1,45 +1,165 @@
-@import url('https://fonts.googleapis.com/css2?family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&display=swap');
+/* =========================================================
+   login.css — estilos exclusivos da tela de Login (JáPassou?)
+   Mobile First: o código base vale para celular;
+   a media query no final só adapta telas maiores.
+   ========================================================= */
 
-:root{
-    --azul: #4C8ED9;
-    --amarelo: #FFC43B;
+/* ---------- Variáveis (restritas à página de login) ---------- */
+.login-pagina {
+    --login-fundo: #121212;
+    --login-azul: #1e6fd9;
+    --login-azul-escuro: #1859ad;
+    --login-amarelo: #ffc43d;
+    --login-amarelo-hover: #ffd266;
+    --login-texto-escuro: #111111;
+    --login-branco: #ffffff;
+    --login-placeholder: #6b6b6b;
+
+    background-color: var(--login-fundo);
+    font-family: "Ubuntu", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 
-.login{
-    background-color: var(--azul) !important;
+/* ---------- Painel azul ---------- */
+.login-painel {
+    max-width: 26rem;
+    /* Mobile: o painel preenche a tela, descontando o respiro de 1rem (p-3) do body */
+    min-height: calc(100dvh - 2rem);
+    padding: 2rem 1.25rem;
+    background-color: var(--login-azul);
+    color: var(--login-branco);
+    border-radius: 1.25rem;
 }
 
-.logo{
-    margin-top: 30%;
-}
-input{
-    font-family: "Intel One Mono", monospace;
-}
-
-.form-control{
-    /*nao consegui fazer o border radius ficar bom*/
-}
-
-a{
-    color: black;
-}
-
-.botaoLogin{
-    background-color: #ffff !important;
-    min-width: 200px;
-    height: 60px;
-    border-color: var(--amarelo);
-    border-width: 5px;
-    /*nao consegui fazer o border radius ficar bom*/
-
-
-    /* fonte*/
-    font-family: "Intel One Mono", monospace;
+/* ---------- Logo em texto ---------- */
+.login-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.15rem;
+    margin-bottom: 2.5rem !important;
+    font-size: clamp(2rem, 9vw, 2.5rem);
     font-weight: 700;
-    font-size: x-large;
-    color: black;
+    line-height: 1;
+    letter-spacing: -0.01em;
 }
 
-.botaoLogin:hover{
-    color: black;
+.login-logo__ja {
+    display: inline-block;
+    padding: 0.12em 0.2em 0.16em;
+    background-color: var(--login-amarelo);
+    color: var(--login-texto-escuro);
+    border-radius: 0.3em;
+}
+
+.login-logo__nome {
+    color: var(--login-branco);
+}
+
+/* ---------- Rótulos e campos ---------- */
+.login-label {
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--login-branco);
+}
+
+.login-campo {
+    min-height: 3.25rem;              /* alvo de toque confortável */
+    padding: 0.75rem 1rem;
+    font-size: 1rem;                  /* 16px evita zoom automático no iOS */
+    font-weight: 500;
+    color: var(--login-texto-escuro);
+    background-color: var(--login-branco);
+    border: 2px solid transparent;
+    border-radius: 1rem;
+}
+
+.login-campo::placeholder {
+    color: var(--login-placeholder);
+    opacity: 1;
+}
+
+.login-campo:focus {
+    color: var(--login-texto-escuro);
+    background-color: var(--login-branco);
+    border-color: var(--login-amarelo);
+    box-shadow: 0 0 0 0.25rem rgba(255, 196, 61, 0.45);
+}
+
+/* ---------- Link "Esqueci Minha Senha" ---------- */
+.login-esqueci {
+    margin: 2.25rem 0;
+}
+
+.login-link {
+    color: var(--login-branco);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+.login-link:hover,
+.login-link:focus-visible {
+    color: var(--login-amarelo);
+}
+
+.login-link:focus-visible {
+    outline: 2px solid var(--login-amarelo);
+    outline-offset: 4px;
+    border-radius: 0.25rem;
+}
+
+/* ---------- Botões ---------- */
+.login-botao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3.5rem;
+    padding: 0.75rem 1rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: 2px solid transparent;
+    border-radius: 1rem;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.login-botao:focus-visible {
+    outline: 3px solid var(--login-branco);
+    outline-offset: 3px;
+    box-shadow: none;
+}
+
+/* Entrar — fundo amarelo, texto escuro */
+.login-botao--principal {
+    background-color: var(--login-amarelo);
+    border-color: var(--login-amarelo);
+    color: var(--login-texto-escuro);
+}
+
+.login-botao--principal:hover,
+.login-botao--principal:active {
+    background-color: var(--login-amarelo-hover);
+    border-color: var(--login-amarelo-hover);
+    color: var(--login-texto-escuro);
+}
+
+/* Criar Conta — fundo azul, borda e texto brancos */
+.login-botao--secundario {
+    background-color: var(--login-azul);
+    border-color: var(--login-branco);
+    color: var(--login-branco);
+}
+
+.login-botao--secundario:hover,
+.login-botao--secundario:active {
+    background-color: var(--login-azul-escuro);
+    border-color: var(--login-branco);
+    color: var(--login-branco);
+}
+
+/* ---------- Telas maiores (tablet / desktop) ---------- */
+@media (min-width: 576px) {
+    .login-painel {
+        min-height: 0;                /* painel deixa de preencher a tela */
+        padding: 3rem 2.5rem;
+    }
 }

@@ -1,0 +1,186 @@
+/* =========================================================
+   cadastro.css — estilos exclusivos da tela Criar Conta
+   Mobile First: o código base vale para celular;
+   a media query no final só adapta telas maiores.
+   ========================================================= */
+
+/* ---------- Variáveis (restritas à página de cadastro) ---------- */
+.cadastro-pagina {
+    --cadastro-fundo: #121212;
+    --cadastro-painel: #f5e9b5;
+    --cadastro-amarelo: #ffc43d;
+    --cadastro-amarelo-hover: #ffd266;
+    --cadastro-texto: #111111;
+    --cadastro-branco: #ffffff;
+    --cadastro-borda: #1a1a1a;
+
+    background-color: var(--cadastro-fundo);
+    font-family: "Ubuntu", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+/* ---------- Painel bege ---------- */
+.cadastro-painel {
+    max-width: 26rem;
+    padding: 1.25rem 1.25rem 2rem;
+    background-color: var(--cadastro-painel);
+    color: var(--cadastro-texto);
+    border-radius: 1.25rem;
+}
+
+/* ---------- Cabeçalho: botão voltar + título ---------- */
+.cadastro-voltar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--cadastro-branco);
+    border-radius: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.cadastro-voltar:hover {
+    background-color: var(--cadastro-amarelo);
+}
+
+.cadastro-voltar:focus-visible {
+    outline: 3px solid var(--cadastro-texto);
+    outline-offset: 3px;
+}
+
+.cadastro-titulo {
+    margin: 1rem 0 1.5rem;
+    font-size: clamp(1.75rem, 8vw, 2.25rem);
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+/* ---------- Rótulos ---------- */
+.cadastro-label {
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--cadastro-texto);
+}
+
+/* ---------- Campos (input e select) ---------- */
+.cadastro-campo {
+    min-height: 3.25rem;              /* alvo de toque confortável */
+    padding: 0.75rem 1rem;
+    font-size: 1rem;                  /* 16px evita zoom automático no iOS */
+    font-weight: 500;
+    color: var(--cadastro-texto);
+    background-color: var(--cadastro-branco);
+    border: 1px solid var(--cadastro-borda);
+    border-radius: 1rem;
+}
+
+.cadastro-campo:focus {
+    color: var(--cadastro-texto);
+    background-color: var(--cadastro-branco);
+    border-color: var(--cadastro-texto);
+    box-shadow: 0 0 0 0.25rem rgba(255, 196, 61, 0.7);
+}
+
+/* Select: texto menor e em negrito, como na referência */
+.cadastro-campo--select {
+    padding-right: 2.75rem;           /* espaço para a seta do select */
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+/* Data: troca o ícone nativo pelo Calendario.svg do projeto
+   (Chrome, Edge e Safari; o Firefox mantém o ícone dele) */
+.cadastro-campo--data::-webkit-calendar-picker-indicator {
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0;
+    cursor: pointer;
+    background: url("../icon/SVGs/Calendario.svg") no-repeat center / contain;
+}
+
+/* ---------- Termos e condições ---------- */
+.cadastro-checkbox {
+    width: 1.75rem;
+    height: 1.75rem;
+    margin-top: 0.1rem !important;
+    background-color: var(--cadastro-branco);
+    border: 1px solid var(--cadastro-borda);
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.cadastro-checkbox:checked {
+    background-color: var(--cadastro-amarelo);
+    border-color: var(--cadastro-borda);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%23111' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3E%3C/svg%3E");
+}
+
+.cadastro-checkbox:focus {
+    border-color: var(--cadastro-texto);
+    box-shadow: 0 0 0 0.25rem rgba(255, 196, 61, 0.7);
+}
+
+.cadastro-termos__texto {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    cursor: pointer;
+}
+
+/* ---------- Botão principal ---------- */
+.cadastro-botao {
+    min-height: 3.25rem;
+    padding: 0.75rem 1rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--cadastro-texto);
+    background-color: var(--cadastro-amarelo);
+    border: 2px solid var(--cadastro-amarelo);
+    border-radius: 1rem;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.cadastro-botao:hover,
+.cadastro-botao:active {
+    color: var(--cadastro-texto);
+    background-color: var(--cadastro-amarelo-hover);
+    border-color: var(--cadastro-amarelo-hover);
+}
+
+.cadastro-botao:focus-visible {
+    color: var(--cadastro-texto);
+    outline: 3px solid var(--cadastro-texto);
+    outline-offset: 3px;
+    box-shadow: none;
+}
+
+/* ---------- Rodapé: link para o login ---------- */
+.cadastro-rodape {
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.cadastro-link {
+    color: var(--cadastro-texto);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+.cadastro-link:hover {
+    color: var(--cadastro-texto);
+    text-decoration-thickness: 2px;
+}
+
+.cadastro-link:focus-visible {
+    outline: 2px solid var(--cadastro-texto);
+    outline-offset: 4px;
+    border-radius: 0.25rem;
+}
+
+/* ---------- Telas maiores (tablet / desktop) ---------- */
+@media (min-width: 576px) {
+    .cadastro-painel {
+        padding: 2rem 2.5rem 2.5rem;
+    }
+}
