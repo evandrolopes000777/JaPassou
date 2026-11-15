@@ -99,6 +99,8 @@ h2{
   padding: 5px;
   border-radius: 12px;
   margin-bottom: 24px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .seletor-presenca-custom input[type="radio"] {
