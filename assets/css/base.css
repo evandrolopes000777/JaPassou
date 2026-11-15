@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+:root{
+    --background-login: #2279DB;
+    --background: #F4E7AE;
+    --amarelo-btn: #FFC43B;
+    --azul-escuro-card: #132F4E;
+    --cinza: #E6E6E6;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img { max-width: 100%; }
+
+body {
+  background-color: var(--background);
+  font-family: "Ubuntu", sans-serif;
+}

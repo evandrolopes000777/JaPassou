@@ -1,0 +1,30 @@
+.tela {
+  max-width: 430px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+.btn {
+  min-height: 44px;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.btn:focus-visible {
+    outline: 2px solid var(--azul-escuro-card);
+}
+
+.btn:disabled {
+    opacity: 0.5; cursor: not-allowed;
+}
+
+.btn-primario{
+    background-color: var(--amarelo-btn);
+    border: none;
+    border-radius: 16px;
+}
+
+.btn-contorno{
+    background-color: transparent;
+    border: 2px solid black;
+}
