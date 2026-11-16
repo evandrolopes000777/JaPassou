@@ -14,7 +14,7 @@
     --cadastro-branco: #ffffff;
     --cadastro-borda: #1a1a1a;
 
-    background-color: var(--cadastro-fundo);
+    background-color: var(--cadastro-painel);
     font-family: "Ubuntu", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 
@@ -22,9 +22,9 @@
 .cadastro-painel {
     max-width: 26rem;
     padding: 1.25rem 1.25rem 2rem;
-    background-color: var(--cadastro-painel);
+    background-color: transparent;      /* o bege agora vem do body */
     color: var(--cadastro-texto);
-    border-radius: 1.25rem;
+    border-radius: 0;                   /* sem cantos arredondados */
 }
 
 /* ---------- Cabeçalho: botão voltar + título ---------- */
