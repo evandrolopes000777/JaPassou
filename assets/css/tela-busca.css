@@ -1,0 +1,294 @@
+/* ==========================================================
+   tela-busca.css
+   Tela "Rotas": abas Buscar / Favoritas, filtros e cards.
+   Depende de layout-app.css (variáveis e estrutura).
+   ========================================================== */
+
+/* ---------- Controles: abas + filtros ---------- */
+
+.controles {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 16px;
+  grid-template-areas:
+    "abas"
+    "filtros";
+}
+
+.abas {
+  grid-area: abas;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  padding: 4px;
+  background: var(--cor-branco);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+}
+
+.aba {
+  padding: 10px 8px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.aba[aria-selected="true"] {
+  background: var(--cor-azul);
+  color: var(--cor-branco);
+}
+
+.aba:not([aria-selected="true"]):hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #000000;
+  transition: background-color 0.2s ease;
+}
+
+.filtros {
+  grid-area: filtros;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.campo label {
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.campo input,
+.campo select {
+  width: 100%;
+  padding: 10px 12px;
+  background: var(--cor-branco);
+  border: 1px solid #8a8a8a;
+  border-radius: 8px;
+}
+
+.campo select {
+  font-size: 0.75rem;
+  font-weight: 700;
+  border: 0;
+  padding: 8px 10px;
+}
+
+.campo input {
+  padding: 14px 12px;
+}
+
+/* ---------- Lista e cards ---------- */
+
+.lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px;
+  background: var(--cor-branco);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+}
+
+.card__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  min-width: 0;
+}
+
+.card__nome {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.card__detalhe {
+  margin: 0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--cor-texto-suave);
+}
+
+.card__acoes {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.btn-icone {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--cor-cinza-botao);
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-icone svg {
+  width: 18px;
+  height: 18px;
+}
+
+.btn-icone:hover {
+  background: #d2d2d2;
+}
+
+/* ícone de favorito: preenchido quando ativo */
+.btn-favorito svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+.btn-favorito[aria-pressed="true"] svg {
+  fill: currentColor;
+}
+
+/* ---------- Cards da aba Favoritas ---------- */
+
+.card--favorita {
+  flex-direction: column;
+  align-items: stretch;
+  padding: 14px;
+}
+
+.card--favorita .botoes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn--primario {
+  background: var(--cor-amarelo);
+  border: 2px solid var(--cor-amarelo);
+}
+
+.btn--contorno {
+  background: var(--cor-branco);
+  border: 2px solid var(--cor-texto);
+}
+
+.btn:hover {
+  filter: brightness(0.95);
+}
+
+.vazio {
+  padding: 24px 12px;
+  text-align: center;
+  color: var(--cor-texto-suave);
+  background: var(--cor-branco);
+  border-radius: var(--raio);
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* ---------- Desktop: filtros à esquerda, abas à direita ---------- */
+
+@media (min-width: 1024px) {
+  .controles {
+    grid-template-columns: minmax(280px, 1fr) auto;
+    align-items: start;
+    grid-template-areas: "filtros abas";
+    margin-bottom: 32px;
+  }
+
+  .abas {
+    grid-template-columns: auto auto;
+    gap: 12px;
+    padding: 6px;
+    border-radius: 14px;
+  }
+
+  .aba {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+  }
+
+  .filtros {
+    max-width: 420px;
+    flex-direction: column-reverse; /* pesquisa em cima, instituição embaixo */
+    gap: 8px;
+  }
+
+  .campo select {
+    max-width: 200px;
+  }
+
+  .card {
+    padding: 14px 24px;
+  }
+
+  .card__nome {
+    font-size: 1.25rem;
+  }
+
+  .card__detalhe {
+    font-size: 0.8rem;
+  }
+
+  .btn-icone {
+    width: 52px;
+    height: 52px;
+  }
+
+  .btn-icone svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .card__acoes {
+    gap: 24px;
+  }
+
+  /* favoritas no desktop: botões ao lado das informações */
+  .card--favorita {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .card--favorita .botoes {
+    margin-top: 0;
+    grid-template-columns: auto auto;
+  }
+
+  .card--favorita .btn {
+    min-width: 140px;
+  }
+
+  
+}

@@ -1,0 +1,170 @@
+/* ==========================================================
+   global.css
+   Estilos GLOBAIS da barra de navegação do JáPassou?
+   (somente o menu; nada de conteúdo de página aqui).
+
+   Uso em qualquer página:
+   1. <link rel="stylesheet" href="assets/css/global.css">
+   2. Copiar o HTML do menu (aside.menu-lateral + nav.menu-inferior)
+   3. Marcar o item da página atual com aria-current="page"
+   4. Se a página não tiver estrutura própria de layout, adicionar
+      class="com-menu" no <body> para reservar o espaço do menu.
+
+   - Celular e tablet: menu inferior
+   - Desktop (>= 1024px): menu lateral azul
+   ========================================================== */
+
+:root {
+  --nav-azul: #2077da;
+  --nav-amarelo: #ffc53d;
+  --nav-branco: #ffffff;
+  --nav-texto: #111111;
+  --nav-borda: #d9d9d9;
+  --nav-sombra: 0 2px 6px rgba(0, 0, 0, 0.18);
+  --nav-largura-lateral: 205px;
+  --nav-altura-inferior: 64px;
+}
+
+.menu-inferior,
+.menu-inferior *,
+.menu-lateral,
+.menu-lateral * {
+  box-sizing: border-box;
+}
+
+.menu-inferior a,
+.menu-lateral a {
+  text-decoration: none;
+  color: var(--nav-texto);
+}
+
+.menu-inferior a:focus-visible,
+.menu-lateral a:focus-visible {
+  outline: 3px solid var(--nav-azul);
+  outline-offset: 2px;
+}
+
+/* ---------- Reserva de espaço (páginas sem layout próprio) ---------- */
+
+body.com-menu {
+  padding-bottom: var(--nav-altura-inferior);
+}
+
+/* ---------- Menu inferior (mobile e tablet) ---------- */
+
+.menu-inferior {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: var(--nav-altura-inferior);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: var(--nav-branco);
+  border-top: 1px solid var(--nav-borda);
+  z-index: 1030; /* acima do conteúdo e compatível com o Bootstrap */
+}
+
+.menu-inferior a {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.menu-inferior a[aria-current="page"] {
+  color: var(--nav-azul);
+}
+
+.menu-inferior svg {
+  width: 26px;
+  height: 26px;
+}
+
+/* ---------- Menu lateral (desktop) ---------- */
+
+.menu-lateral {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  body.com-menu {
+    padding-bottom: 0;
+    padding-left: var(--nav-largura-lateral);
+  }
+
+  .menu-inferior {
+    display: none;
+  }
+
+  .menu-lateral {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: var(--nav-largura-lateral);
+    display: flex;
+    flex-direction: column;
+    padding: 24px 16px;
+    background: var(--nav-azul);
+    z-index: 1030;
+  }
+
+  .menu-lateral__logo {
+    margin: 8px 0 48px;
+    padding-left: 8px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--nav-branco);
+  }
+
+  .menu-lateral__logo span {
+    display: inline-block;
+    padding: 0 6px;
+    margin-right: 2px;
+    background: var(--nav-amarelo);
+    color: var(--nav-texto);
+    border-radius: 8px;
+  }
+
+  .menu-lateral nav {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .menu-lateral nav a {
+    display: block;
+    padding: 10px 12px;
+    text-align: center;
+    font-weight: 500;
+    background: var(--nav-branco);
+    border-radius: 8px;
+    box-shadow: var(--nav-sombra);
+  }
+
+  .menu-lateral nav a:hover {
+    background-color: #d9d9d9;
+  }
+
+  .menu-lateral nav a[aria-current="page"] {
+    background: var(--nav-amarelo);
+  }
+
+  .menu-lateral nav a[aria-current="page"]:hover {
+    background-color: #f8b519;
+  }
+
+  .menu-lateral .sair {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(0, 0, 0, 0.35);
+    font-size: 0.85rem;
+  }
+}

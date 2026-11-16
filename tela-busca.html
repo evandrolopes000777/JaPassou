@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rotas | JáPassou?</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/layout-app.css">
+  <link rel="stylesheet" href="assets/css/tela-busca.css">
+</head>
+<body>
+  <div class="app">
+
+    <!-- Menu lateral: aparece só no desktop -->
+    <aside class="menu-lateral">
+      <div class="menu-lateral__logo"><span>Já</span>Passou?</div>
+      <nav aria-label="Menu principal">
+        <a href="home.html">Início</a>
+        <a href="#">Minha Rotina</a>
+        <a href="tela-busca.html" aria-current="page">Rotas</a>
+        <a href="#">Notificações</a>
+        <a href="#">Meu Perfil</a>
+      </nav>
+      <a class="sair" href="login.html">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 3h9v4h-2V5H6v14h5v-2h2v4H4V3zm12 5 4 4-4 4v-3H9v-2h7V8z"/></svg>
+        Sair
+      </a>
+    </aside>
+
+    <main class="conteudo">
+      <div class="pagina">
+
+        <header class="topo">
+          <button class="btn-voltar" type="button" id="btn-voltar" aria-label="Voltar">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          </button>
+          <h1 class="titulo-pagina">Rotas</h1>
+        </header>
+
+        <div class="controles">
+          <div class="abas" role="tablist" aria-label="Seção de rotas">
+            <button class="aba" role="tab" id="aba-buscar" aria-controls="painel-buscar" aria-selected="true" type="button">Buscar</button>
+            <button class="aba" role="tab" id="aba-favoritas" aria-controls="painel-favoritas" aria-selected="false" type="button">Favoritas (<span id="qtd-favoritas">0</span>)</button>
+          </div>
+
+          <div class="filtros" id="filtros">
+            <div class="campo">
+              <label for="filtro-instituicao">Instituição de ensino</label>
+              <select id="filtro-instituicao">
+                <option value="ifba-irece">IFBA - CAMPUS IRECÊ</option>
+              </select>
+            </div>
+            <div class="campo">
+              <label for="filtro-busca">Pesquisar Rota</label>
+              <input type="search" id="filtro-busca" placeholder="Nome da rota ou bairro" autocomplete="off">
+            </div>
+          </div>
+        </div>
+
+        <section id="painel-buscar" role="tabpanel" aria-labelledby="aba-buscar">
+          <ul class="lista" id="lista-rotas"></ul>
+        </section>
+
+        <section id="painel-favoritas" role="tabpanel" aria-labelledby="aba-favoritas" hidden>
+          <ul class="lista" id="lista-favoritas"></ul>
+        </section>
+
+      </div>
+    </main>
+
+    <!-- Menu inferior: mobile e tablet -->
+    <nav class="menu-inferior" aria-label="Menu principal">
+      <a href="home.html" aria-label="Início">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1V11z"/></svg>
+      </a>
+      <a href="tela-busca.html" aria-label="Rotas" aria-current="page">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M3 11h18M7 17v3M17 17v3"/><circle cx="7.5" cy="14" r=".6"/><circle cx="16.5" cy="14" r=".6"/></svg>
+      </a>
+      <a href="#" aria-label="Notificações">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+      </a>
+      <a href="#" aria-label="Minha rotina">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+      </a>
+      <a href="#" aria-label="Meu perfil">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+      </a>
+    </nav>
+
+  </div>
+
+  <script src="assets/js/tela-busca.js"></script>
+</body>
+</html>
