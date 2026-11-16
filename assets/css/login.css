@@ -15,19 +15,18 @@
     --login-branco: #ffffff;
     --login-placeholder: #6b6b6b;
 
-    background-color: var(--login-fundo);
+    background-color: var(--login-azul);
     font-family: "Ubuntu", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 
 /* ---------- Painel azul ---------- */
 .login-painel {
     max-width: 26rem;
-    /* Mobile: o painel preenche a tela, descontando o respiro de 1rem (p-3) do body */
-    min-height: calc(100dvh - 2rem);
+    min-height: 100dvh;                 /* era calc(100dvh - 2rem) */
     padding: 2rem 1.25rem;
-    background-color: var(--login-azul);
+    background-color: transparent;      /* o azul agora vem do body */
     color: var(--login-branco);
-    border-radius: 1.25rem;
+    border-radius: 0; 
 }
 
 /* ---------- Logo em texto ---------- */
@@ -159,7 +158,7 @@
 /* ---------- Telas maiores (tablet / desktop) ---------- */
 @media (min-width: 576px) {
     .login-painel {
-        min-height: 0;                /* painel deixa de preencher a tela */
+        min-height: 0;
         padding: 3rem 2.5rem;
     }
 }
